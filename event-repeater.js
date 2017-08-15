@@ -3,6 +3,7 @@ const request = require('request')
 const _ = require('lodash')
 const chalk = require('chalk')
 const addWeeks = require('date-fns/add_weeks')
+require('dotenv').config()
 
 let accessToken
 
@@ -20,7 +21,7 @@ function authenticateWildApricot () {
       method: 'POST',
       auth: {
         user: 'APIKEY',
-        pass: 'cw6rtunm0bdpguvmvxrezqvjn53dua'
+        pass: process.env.WA_API_KEY
       },
       form: {
         'grant_type': 'client_credentials',
@@ -92,9 +93,9 @@ function duplicateEvent (event) {
     // console.log('duplicating event', event)
     let newEvent = event
     let startDate = new Date(event.StartDate)
-    // newEvent.StartDate = addDays(newEvent.StartDate, 7)
+    newEvent.StartDate = addDays(newEvent.StartDate, 7)
     newEvent.EndDate = addDays(newEvent.EndDate, 7)
-    newEvent.StartDate = new Date(newEvent.EndDate)
+    //newEvent.StartDate = new Date(newEvent.EndDate)
     newEvent.StartDate.setHours(startDate.getHours())
     newEvent.StartDate.setMinutes(startDate.getMinutes())
     // newStartDate.setDate(new Date(newEvent.EndDate).getDate())
