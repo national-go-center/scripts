@@ -1,0 +1,16 @@
+{
+  "name": "pretty-opengotha",
+  "version": "1.0.0",
+  "description": "Make the HTML output of OpenGotha look considerably nicer",
+  "main": "pretty.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nate Eagle <nate.eagle@nationalgocenter.org>",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "jquery": "^3.2.1",
+    "yargs": "^7.1.0"
+  }
+}
