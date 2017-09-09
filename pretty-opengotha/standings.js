@@ -1,3 +1,5 @@
+// Hastily hacked version to display standings, rather than pairings
+
 const fs = require('fs')
 const argv = require('yargs').argv
 const cheerio = require('cheerio')
