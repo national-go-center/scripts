@@ -56,3 +56,6 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Wild Apricot API Access Token
+wa_access_token.txt
