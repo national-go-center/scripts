@@ -1,6 +1,5 @@
 const request = require('request-promise')
 const fs = require('fs')
-const util = require('util')
 const chalk = require('chalk')
 const _ = require('lodash')
 const dateFns = require('date-fns')
@@ -67,7 +66,8 @@ module.exports = {
       method: 'GET',
       qs: {
         // $filter: 'Tags in [repeats-weekly] AND IsUpcoming eq true',
-        $filter: 'Tags in [repeats-weekly] AND StartDate gt 2018-04-01',
+        // TODO: Make this relative, not just some arbitrary recent date
+        $filter: 'Tags in [repeats-weekly] AND StartDate gt 2019-05-01',
         includeEventDetails: true
       },
       auth: {
